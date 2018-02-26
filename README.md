@@ -1,0 +1,2 @@
+# utl_is_it_ok_to_draw_a_simple_random_sample_srs_from_an_existing_srs_random_sample
+Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample.  Keywords: sas sql join merge big data analytics macros oracle teradata mysql sas communities stackoverflow statistics artificial inteligence AI Python R Java Javascript WPS Matlab SPSS Scala Perl C C# Excel MS Access JSON graphics maps NLP natural language processing machine learning igraph DOSUBL DOW loop stackoverfl SAS community.
