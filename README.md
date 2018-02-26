@@ -17,6 +17,7 @@ Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample
        Each random variable outcome is independent of all other random variable outcomes within a sample.      
        Statistics drawn from the two samples are not independent.
        But if I publish or do extensive inference I will draw the 100,000 from the full population to avoid explanation.
+    
     Thanks in Advance
 
     Key Responses
