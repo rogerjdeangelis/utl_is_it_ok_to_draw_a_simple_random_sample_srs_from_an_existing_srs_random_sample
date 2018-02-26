@@ -11,7 +11,7 @@ Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample
 
     Bottom line for me
 
-       It is ok
+       It is ok but...
 
       If each random variable outcome in 250 has an equal chance then each of the 100,000 outcomes would also have an equal chance from target.
        Each random variable outcome is independent of all other random variable outcomes within a sample.      
