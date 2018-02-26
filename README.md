@@ -4,15 +4,19 @@ Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample
 
     I have a 250,000  SRS from some 240 million observations, but I need 100,000. Can I draw 100,000 from the
     existing 250,000 SRS. The input is for a trajectory analysis(like time series cluster analysis).
+    
+    github
+    https://goo.gl/v1nrf4
+    https://github.com/rogerjdeangelis/utl_is_it_ok_to_draw_a_simple_random_sample_srs_from_an_existing_srs_random_sample
 
     Bottom line for me
 
        It is ok
 
-       If each sample in 250 has an equal chance then then each of the 100 would also have an equal chance
-       Each random variable outcome is independent of all other random variable outcomes
+      If each random variable outcome in 250 has an equal chance then each of the 100,000 outcomes would also have an equal chance from target.
+       Each random variable outcome is independent of all other random variable outcomes within a sample.      
+       Statistics drawn from the two samples are not independent.
        But if I publish or do extensive inference I will draw the 100,000 from the full population to avoid explanation.
-
     Thanks in Advance
 
     Key Responses
