@@ -11,7 +11,7 @@ Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample
 
     Bottom line for me
 
-       maybe not... (see last reply)
+       Looks like it is ok, But..
 
        If each random variable outcome in 250 has an equal chance then each of the 100,000 outcomes would also have an equal chance from target.
        Each random variable outcome is independent of all other random variable outcomes within a sample.      
@@ -117,4 +117,88 @@ Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample
     random sample of a population will lead to a biased sample, with r
     espect to the population.  The bias may be small/inconsequential but biased nonetheless.  Roger will need
     to decide whether that is a problem.
+    
+    
+        Martin, Vincent (STATCAN) via listserv.uga.edu
+
+    The formal definition of SRS is equal probability of all n-sized samples.
+    The individual record-level inclusion probabilities is simply a consequence.
+    However, the latter is not a sufficient condition for the former. Systematic
+    sampling is the usual example of equal probability at the record level with
+    unequal probability across all possible samples (assuming N/n is integer valued
+    for simplicity and non-random initial sort).
+
+    As for the argument provided, you are looking at the conditional sampling
+    of the second step only with respect to the entire population but as John
+    pointed out, you have to consider the entire process and when considered,
+    all resulting n2=100k sized samples from the 2-steps meet the condition
+    mentioned above.
+
+    Let
+    S1 be the space of all possible s1 samples of size n1 from N
+    S2 be the space of all possible s2 samples of size n2 from s1
+    S3 be the space of all possible s3 samples of size n2 from N
+
+    All are subsets of the set of all possible samples of any size on a
+    population of size N (omega in traditional set theory applied to sampling anyway).
+
+    Using c() as the shorthand for the combinatorial or comb() function
+    in SAS if you wish to write the formula down.
+
+    The probability that any given sample s3 of size n2 is drawn through
+    the 2-step process can be calculated by conditioning step 1 samples
+    and then using bayes formula to further condition on whether s3 was
+    fully contained within s1. So treating s3 as an arbitrary but fixed
+    sample (i.e. randomness for probabilities below is WRT s1 and s2
+    sampling mechanisms) and looking at the probab
+    ility that this sample be drawn by the random 2-step process, you will find that
+
+    -There are exactly c(N, n1) distinct samples of size n1 from step 1.
+    So P(s1) = 1/comb(N, n1) forall s1 in S1.
+
+    -There are exactly c(N-n2, n1-n2)*c(n2, n2) distinct samples of size n1
+    that contain exactly s3. c(n2, n2) reduces to 1 it's just simple to see
+    the combinatorial formula if you write it down. So the probability that
+    the first step sample s1 contains an arbitrary s3 sample is
+    P(s1 contains s3) = c(N-n2, n1-n2) / c(N, n1).
+
+    -There are exactly c(n1, n2) distinct samples of size n2 from n1 at
+    step 2 so P(s2 | s1) = 1/c(n1, n2) forall s2 in S2. There are exactly
+    one such sample s3 if s3 is included in s1 and 0 otherwise such that
+    P(s2 contains s3 | s1 contains s3) = 1/c(n1, n2) and P(s2 contains
+    s3 | s1 does not contain s3)
+
+    Thus, the probability that an arbitrary sample s3 be drawn from the
+    joint 2 step process can be broken down by conditioning on step 1 and
+    on whether s3 was nested in s1 or not. That is with s3 fixed, s1 and s2 random,
+
+    P(s2 contains s3 , s1)
+
+    =P( s2 contains s3, s1 contains s3) + P(s2 contains s3, s1 does not contain s3)
+    =P(s2 contains s3 | s1 contains s3)*P(s1 contains s3)+
+    P(s2 contains s3 | s1 does not contain s3)*P(s1 does not contain s3)
+    = P(s2 contains s3 | s1 contains s3)*P(s1 contains s3)+0
+    =[1/c(n1, n2)]*[ comb(N-n2, n1-n2) * [1/comb(N, n1)]]
+    =[n2! (n2-n1)!/n1!]*[(N-n2)!/((n1-n2)!(N-n1)!)]*[n1!(N-n1)!/N!]
+    =n2!(N-n2)!/N!
+    =1/c(N, n2)
+
+    Which is the exact probability of sampling any s3 from S3 via SRS.
+
+    Tl;dr the 2 step process has exactly the same probability to draw any
+    sample of size n2 from population N as an SRS sample of the same size
+    drawn directly from the same population.
+
+    It is naturally extremely difficult to make abstraction of conditional
+    stuff. I have given up arguing with family members over probabilities
+    when playing cards specifically because of that.
+
+
+    Please forgive the very crude notation abuse, hopefully the abstraction
+    of the problem is still readable. Set theory is awful to write in plain
+    text and admittedly, I haven't done much formal set theory stuff in recent years.
+
+    HTH,
+    Vincent Martin
+
 
