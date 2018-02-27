@@ -11,7 +11,7 @@ Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample
 
     Bottom line for me
 
-       It is ok but...
+       maybe not... (see last reply)
 
        If each random variable outcome in 250 has an equal chance then each of the 100,000 outcomes would also have an equal chance from target.
        Each random variable outcome is independent of all other random variable outcomes within a sample.      
@@ -85,4 +85,36 @@ Is it ok to draw a simple random sample(SRS) from an existing  SRS random sample
     Statistique Canada / Gouvernement du Canada
     vincent.martin@canada.ca / Tél: 613-853-7135
 
+    Daniel Nordlund via listserv.uga.edu
+    2:46 AM (6 hours ago)
+     to SAS-L
+
+    John,
+
+    I guess I have to disagree.
+
+    To obtain a simple random sample of size n from a POPULATION, the process must ensure that
+      1. each member of the POPULATION has an equal probability of selection AND
+      2. each possible sample of size n from the POPULATION has an equal probability of occurring
+
+    When taking a simple random sample of size 100,000 from an existing sample of 250,000 from the
+    given population, neither of the above conditions is satisfied. Most members of the population
+    have zero probability of being selected, and most subsets of 100,000 (in the population) have
+    zero probability of occurring.
+
+    It was pointed out by John and Joe that if the the first 250,000 sample was not ordered, then
+    one could just take the FIRST 100,000 as a random sample of the POPULATION.  And that is true,
+    because each member of the POPULATION (1) had an equal chance of being selected in the first
+    100,000 and (2) each potential sample of size 100,000 had an equal chance of being in that first 100,0
+    00.  But again, taking any other sample of 100,000 from the 250,000 sample violates both of those principles
+
+    This doesn't mean that a simple random sample of 100,000 isn't, in some sense, "representative"
+    of the POPULATION.  For many purposes it may be quite adequate.  But, it is not a simple random sample of the POPULATION.
+
+    Roger's original question: Is it ok to draw a random sample from a random sample?  I think the answer
+    is "It depends."  I am reminded of the quote "In theory, there is no difference between theory and practice.
+    But, in practice, there is."  (sorry I don't know the source) Drawing a simple random sample from a simple
+    random sample of a population will lead to a biased sample, with r
+    espect to the population.  The bias may be small/inconsequential but biased nonetheless.  Roger will need
+    to decide whether that is a problem.
 
